@@ -1,0 +1,309 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: url('assets/background.png') no-repeat center top;
+  background-size: cover;
+  background-attachment: scroll; /* This makes it move as you scroll */
+  color: #333;
+  text-align: center;
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4); /* Adjust darkness: 0.4 = medium, 0.6 = darker */
+  z-index: -1; /* keeps it behind everything */
+}
+
+
+
+header {
+  background: #b3e5fc;
+  padding: 10px 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header-left {
+  text-align: left;
+}
+
+header h1 {
+  font-family: 'Fredoka One', cursive;
+  color: #1c2455;
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.mizu-banner {
+  height: 60px;        /* adjust as needed */
+  max-width: 200px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+
+@media (max-width: 600px) {
+  .mizu-banner {
+    height: 45px;
+  }
+}
+
+
+nav {
+  margin-top: 5px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #1c2455;
+  font-weight: 600;
+  margin: 0 10px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #00bcd4;
+}
+
+.ca-container {
+  background: #e1f5fe;
+  border-radius: 25px;
+  padding: 6px 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  color: #1c2455;
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.1);
+}
+
+#contract-address {
+  font-family: monospace;
+  background: #ffffff70;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+}
+
+#copy-btn {
+  background: #1c2455;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+#copy-btn:hover {
+  background: white;
+  color: #1c2455;
+  border: 2px solid #1c2455;
+}
+
+.hero {
+  padding: 60px 20px;
+}
+
+.mizu-img {
+  width: 400px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.hero h2 {
+  font-family: 'Fredoka One', cursive;
+  color: #1c2455;
+  margin: 20px 0 10px;
+}
+
+button {
+  background: #1c2455;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: white;
+  color: #1c2455;
+  border: 2px solid #1c2455;
+}
+
+.section {
+  padding: 50px 20px;
+}
+
+.section h2 {
+  color: #1c2455;
+  font-family: 'Fredoka One', cursive;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #e1f5fe;
+  margin: 8px auto;
+  display: inline-block;
+  padding: 10px 20px;
+  border-radius: 15px;
+}
+
+.socials a {
+  display: inline-block;
+  margin: 8px;
+  padding: 10px 20px;
+  background: #b3e5fc;
+  color: #1c2455;
+  border-radius: 20px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  background: #81d4fa;
+}
+
+footer {
+  background: #b3e5fc;
+  padding: 15px;
+  color: #1c2455;
+  font-size: 0.9rem;
+}
+
+
+/* === Loading Screen === */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #c8f7ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 9999;
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.loading-gif {
+  width: 180px;
+  max-width: 80vw;
+  animation: float 3s ease-in-out infinite;
+}
+
+.loading-bar {
+  width: 200px;
+  height: 10px;
+  background: #b3e5fc;
+  border-radius: 10px;
+  margin: 20px auto 10px;
+  overflow: hidden;
+}
+
+.loading-progress {
+  height: 100%;
+  width: 0%;
+  background: #1c2455;
+  border-radius: 10px;
+  animation: progress 2s linear forwards;
+}
+
+@keyframes progress {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+#loading-screen p {
+  font-family: 'Poppins', sans-serif;
+  color: #1c2455;
+  font-weight: 600;
+  margin-top: 5px;
+}
+
+
+/* Wiggle animation */
+@keyframes wiggle {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(3deg); }
+  50% { transform: rotate(-3deg); }
+  75% { transform: rotate(2deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Apply wiggle on hover */
+#tokenomics ul li {
+  display: inline-block;
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+#tokenomics ul li:hover {
+  animation: wiggle 0.4s ease-in-out;
+}
+
+
+#about p {
+  color: #c8f7ff;
+}
+
+#hero p {
+  color: #c8f7ff;
+}
+
+#join p {
+  color: #c8f7ff;
+}
+
+#ripple-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* Let mouse go through */
+  z-index: 0;
+  mix-blend-mode: screen;
+}
+
+.hero {
+  position: relative;
+  z-index: 1;
+}
+
+#ripple-canvas {
+  filter: blur(1px) brightness(1.2);
+}
+
